@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication_Kaido05.Models.Member>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>一覧</h3>
+
+<p><a href="/Home/Create">新規作成</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.email</td>
+                <td>
+                    <a href="/Home/Details/@item.id">詳細</a> |
+                    <a href="/Home/Edit/@item.id">編集</a> |
+                    <a href="/Home/Delete/@item.id">削除</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

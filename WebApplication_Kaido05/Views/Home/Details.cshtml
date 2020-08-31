@@ -1,0 +1,27 @@
+﻿@model WebApplication_Kaido05.Models.Member
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<h3>詳細</h3>
+
+<p><a href="/Home/Index">一覧へ</a></p>
+
+<table class="table">
+    <tr>
+        <th>id</th>
+        <td>@Model.id</td>
+    </tr>
+    <tr>
+        <th>name</th>
+        <td>@Model.name</td>
+    </tr>
+    <tr>
+        <th>email</th>
+        <td>@Model.email</td>
+    </tr>
+</table>
+

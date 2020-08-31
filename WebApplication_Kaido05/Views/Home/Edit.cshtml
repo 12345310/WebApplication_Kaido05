@@ -1,0 +1,47 @@
+﻿@model WebApplication_Kaido05.Models.Member
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<h3>編集</h3>
+
+<form action="/Home/Edit" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <!-- id -->
+        <input type="hidden" name="id" value="@Model.id" />
+
+        <!-- name -->
+        <div class="form-group">
+            <label class="control-label col-md-2">name</label>
+            <div class="col-md-10">
+                <input type="text" name="name" class="form-control" value="@Model.name" />
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- email -->
+        <div class="form-group">
+            <label class="control-label col-md-2">email</label>
+            <div class="col-md-10">
+                <input type="text" name="email" class="form-control" value="@Model.email" />
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!-- submit -->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="更新" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
